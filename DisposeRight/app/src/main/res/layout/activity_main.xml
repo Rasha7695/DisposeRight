@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextureView
+        android:id="@+id/textureView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--        android:layout_marginBottom="20dp"-->
+<!--        android:scaleType="fitCenter" -->
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top"
+        android:background="#FAF6F6"
+        android:text=""
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+
+        android:textSize="20sp"
+        android:textStyle="bold" />
+<!--        app:layout_constraintTop_toTopOf="@id/detect" />-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/texture"-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Load Image"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/result_text"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/detect" />-->
+
+    <Button
+        android:id="@+id/detect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="capture &amp; classify"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
