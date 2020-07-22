@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="FirstActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="89dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="316dp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Dispose Right"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="182dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="112dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/black"
+        android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+        android:progressDrawable="@android:color/black"
+        android:progressTint="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="157dp"
+        android:layout_height="141dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="404dp"
+        android:src="@drawable/logo" />
+
+</RelativeLayout>

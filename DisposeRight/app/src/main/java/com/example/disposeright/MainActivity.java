@@ -64,6 +64,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
+
     private static int RESULT_LOAD_IMAGE = 1;
     private Button detectButton;
     private TextureView textureView;
@@ -125,8 +126,10 @@ public class MainActivity extends AppCompatActivity {
 
         //From Java 1.4 , you can use keyword 'assert' to check expression true or false
         assert textureView != null;
+
         textureView.setSurfaceTextureListener(textureListener);
-        detectButton = (Button)findViewById(R.id.detect);
+
+       // detectButton = (Button)findViewById(R.id.detect);
         detectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -336,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
             bitmap = Bitmap.createScaledBitmap(bitmap, 400, 400, true);
 
             //Loading the model file.
-            module = Module.load(fetchModelFile(MainActivity.this, "resnet18_traced.pt"));
+            module = Module.load(fetchModelFile(MainActivity.this, "saved_model_new2.pt"));
         } catch (IOException e) {
             finish();
         }
@@ -363,10 +366,7 @@ public class MainActivity extends AppCompatActivity {
                 ms_ix = i;
             }
         }
-        if(ms_ix == -1){
-            Toast.makeText(MainActivity.this, "What the fuck", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
         //Fetching the name from the list based on the index
         final String detected_class = ModelClasses.MODEL_CLASSES[ms_ix];
 
