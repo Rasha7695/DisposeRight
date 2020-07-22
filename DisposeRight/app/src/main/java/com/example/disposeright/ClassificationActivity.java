@@ -115,101 +115,21 @@ public class ClassificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.classification_activity);
 
-        //Button buttonLoadImage = (Button) findViewById(R.id.button);
         textureView = (TextureView)findViewById(R.id.textureView);
         detectButton = (Button) findViewById(R.id.detect);
 
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-//        }
 
         //From Java 1.4 , you can use keyword 'assert' to check expression true or false
         assert textureView != null;
 
         textureView.setSurfaceTextureListener(textureListener);
 
-        // detectButton = (Button)findViewById(R.id.detect);
         detectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 takePicture();
             }
         });
-//        buttonLoadImage.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View arg0) {
-//                TextView textView = findViewById(R.id.result_text);
-//                textView.setText("");
-//                Intent i = new Intent(
-//                        Intent.ACTION_PICK,
-//                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//
-//                startActivityForResult(i, RESULT_LOAD_IMAGE);
-//
-//
-//            }
-//        });
-
-
-//        detectButton.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View arg0) {
-//
-//                Bitmap bitmap = null;
-//                Module module = null;
-//
-//                //Getting the image from the image view
-//                ImageView imageView = (ImageView) findViewById(R.id.image);
-//
-//                try {
-//                    //Read the image as Bitmap
-//                    bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-//
-//                    //Here we reshape the image into 400*400
-//                    bitmap = Bitmap.createScaledBitmap(bitmap, 400, 400, true);
-//
-//                    //Loading the model file.
-//                    module = Module.load(fetchModelFile(MainActivity.this, "resnet18_traced.pt"));
-//                } catch (IOException e) {
-//                    finish();
-//                }
-//
-//                //Input Tensor
-//                final Tensor input = TensorImageUtils.bitmapToFloat32Tensor(
-//                        bitmap,
-//                        TensorImageUtils.TORCHVISION_NORM_MEAN_RGB,
-//                        TensorImageUtils.TORCHVISION_NORM_STD_RGB
-//                );
-//
-//                //Calling the forward of the model to run our input
-//                final Tensor output = module.forward(IValue.from(input)).toTensor();
-//
-//
-//                final float[] score_arr = output.getDataAsFloatArray();
-//
-//                // Fetch the index of the value with maximum score
-//                float max_score = -Float.MAX_VALUE;
-//                int ms_ix = -1;
-//                for (int i = 0; i < score_arr.length; i++) {
-//                    if (score_arr[i] > max_score) {
-//                        max_score = score_arr[i];
-//                        ms_ix = i;
-//                    }
-//                }
-//
-//                //Fetching the name from the list based on the index
-//                String detected_class = ModelClasses.MODEL_CLASSES[ms_ix];
-//
-//                //Writing the detected class in to the text view of the layout
-//                TextView textView = findViewById(R.id.result_text);
-//                textView.setText(detected_class);
-//
-//
-//            }
-//        });
 
     }
 
@@ -391,35 +311,6 @@ public class ClassificationActivity extends AppCompatActivity {
 
 
     }
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        //This functions return the selected image from gallery
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-//            Uri selectedImage = data.getData();
-//            String[] filePathColumn = { MediaStore.Images.Media.DATA };
-//
-//            Cursor cursor = getContentResolver().query(selectedImage,
-//                    filePathColumn, null, null, null);
-//            cursor.moveToFirst();
-//
-//            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-//            String picturePath = cursor.getString(columnIndex);
-//            cursor.close();
-//
-//            ImageView imageView = (ImageView) findViewById(R.id.image);
-//            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-//
-//            //Setting the URI so we can read the Bitmap from the image
-//            imageView.setImageURI(null);
-//            imageView.setImageURI(selectedImage);
-//
-//
-//        }
-//
-//
-//    }
 
     public static String fetchModelFile(Context context, String modelName) throws IOException {
         File file = new File(context.getFilesDir(), modelName);
