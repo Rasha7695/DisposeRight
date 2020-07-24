@@ -175,18 +175,18 @@ public class ClassificationActivity extends AppCompatActivity {
                         ByteBuffer buffer = image.getPlanes()[0].getBuffer();
                         byte[] bytes = new byte[buffer.capacity()];
                         buffer.get(bytes);
-                        save(bytes);
+                       // save(bytes);
                         detect(bytes);
 
                     }
-                    catch (FileNotFoundException e)
-                    {
-                        e.printStackTrace();
-                    }
-                    catch (IOException e)
-                    {
-                        e.printStackTrace();
-                    }
+//                    catch (FileNotFoundException e)
+//                    {
+//                        e.printStackTrace();
+//                    }
+//                    catch (IOException e)
+//                    {
+//                        e.printStackTrace();
+//                    }
                     finally {
                         {
                             if(image != null)
@@ -211,7 +211,7 @@ public class ClassificationActivity extends AppCompatActivity {
                 @Override
                 public void onCaptureCompleted(@NonNull CameraCaptureSession session, @NonNull CaptureRequest request, @NonNull TotalCaptureResult result) {
                     super.onCaptureCompleted(session, request, result);
-                    Toast.makeText(ClassificationActivity.this, "Saved "+file, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(ClassificationActivity.this, "Saved "+file, Toast.LENGTH_SHORT).show();
                     createCameraPreview();
                 }
             };
@@ -259,7 +259,7 @@ public class ClassificationActivity extends AppCompatActivity {
             bitmap = Bitmap.createScaledBitmap(bitmap, 400, 400, true);
 
             //Loading the model file.
-            module = Module.load(fetchModelFile(ClassificationActivity.this, "saved_model_new2.pt"));
+            module = Module.load(fetchModelFile(ClassificationActivity.this, "resnet18.pt"));
         } catch (IOException e) {
             finish();
         }
@@ -298,7 +298,7 @@ public class ClassificationActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            textView.setText("Your item is:\n"+detected_class);
+                            textView.setText("Your item belongs in:\n"+detected_class);
                         }
                     });
                     Thread.sleep(300);
@@ -384,7 +384,7 @@ public class ClassificationActivity extends AppCompatActivity {
             {
                 ActivityCompat.requestPermissions(this,new String[]{
                         Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        //Manifest.permission.WRITE_EXTERNAL_STORAGE
                 },REQUEST_CAMERA_PERMISSION);
                 return;
             }

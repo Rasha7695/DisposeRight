@@ -1,6 +1,7 @@
 package com.example.disposeright;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,44 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        remindersBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://servicesenligne2.ville.montreal.qc.ca/sel/infocollectes/"));
+                startActivity(intent);
+            }
+        });
+
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://ville.montreal.qc.ca/portal/page?_pageid=7237,80535592&_dad=portal&_schema=PORTAL"));
+                startActivity(intent);
+            }
+        });
+        infoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, InfoActivity.class);
+                startActivity(i);
+            }
+        });
+        contactBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://github.com/Rasha7695/DisposeRight"));
+                startActivity(intent);
+            }
+        });
     }
 
 }

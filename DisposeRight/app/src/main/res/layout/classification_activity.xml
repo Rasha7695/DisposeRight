@@ -18,35 +18,40 @@
             android:id="@+id/result_text"
             android:layout_width="match_parent"
             android:layout_height="77dp"
+            android:layout_weight="20"
             android:gravity="center_horizontal|center_vertical"
-
             android:text="Your item is: \n"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="#000000"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/textureView" />
     </LinearLayout>
 
-    <TextureView
-        android:id="@+id/textureView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/detect"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="78dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintTop_toTopOf="@id/detect" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/detect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="false"
-        android:layout_marginBottom="21dp"
-        android:text="capture &amp; classify" />
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="78dp"
+            android:layout_marginBottom="9dp"
+            android:layout_weight="70"
+            app:layout_constraintTop_toTopOf="@id/detect" />
+
+        <Button
+            android:id="@+id/detect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center_vertical|center|center_horizontal"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="capture &amp; classify"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </RelativeLayout>
