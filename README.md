@@ -7,7 +7,7 @@ DisposeRight is an Android app that classifies a picture of an item into the tra
 _Capture Picture_ is where an image is taken and classified. 
 _When to dispose?_ gives the schedule for garbage, recycling and compost collection based on the user's postal code. 
 _Where to dispose?_ shows a map and coordinates of ecocenters. 
-_General Info_ contains alternative ways to reuse an object for a zer waste future.  
+_General Info_ contains alternative ways to reuse an object.  
 
 
 ## Model
