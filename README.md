@@ -2,7 +2,7 @@
 DisposeRight is an Android app that classifies a picture of an item into the trash, the recycling, the compost or the undefined category. The goal of this app is to promote sustainability and eco-friendly waste management.
 
 ## How does it work
-<img src="demo1.jpg" height=400>
+<img src="/Images/demo2.jpg" height=400>  <img src="/Images/demo1.jpg" height=400>
 
 
 ## Model
