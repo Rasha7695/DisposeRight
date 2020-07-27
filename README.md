@@ -21,7 +21,3 @@ The application was developed using [Android Studio](https://developer.android.c
 
 ## About the contributors
 [Aurélie Nguyen](https://github.com/aurelie-nguyen), [Rasha Nasri](https://github.com/Rasha7695), [Harshika](https://github.com/Harshika1411) are participants of the 2020 [AI4Good Lab](https://www.ai4goodlab.com/), a 7-week summer training program that starts off with a crash course on machine learning and ends with the development of a project aimed for social good. 
-
-## Future goals
-* Increase the accuracy of the model
-* 
