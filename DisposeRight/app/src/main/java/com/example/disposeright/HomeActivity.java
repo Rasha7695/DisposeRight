@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://ville.montreal.qc.ca/portal/page?_pageid=7237,80535592&_dad=portal&_schema=PORTAL"));
+                intent.setData(Uri.parse("https://ville.montreal.qc.ca/portal/page?_pageid=7237,80535592&_dad=portal&_schema=PORTAL"));
                 startActivity(intent);
             }
         });

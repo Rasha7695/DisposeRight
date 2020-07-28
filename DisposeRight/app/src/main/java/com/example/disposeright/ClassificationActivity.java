@@ -298,7 +298,7 @@ public class ClassificationActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            textView.setText("Your item belongs in:\n"+detected_class);
+                            textView.setText(detected_class);
                         }
                     });
                     Thread.sleep(300);
